@@ -1,8 +1,8 @@
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        result = []
-        tempNums = nums.copy()
+        temparr = nums.copy()
+        result  = []
         nums.sort()
-        for n in tempNums:
-            result.append(nums.index(n))
+        for i in temparr:
+            result.append(nums.index(i))
         return result
