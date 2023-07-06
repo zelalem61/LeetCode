@@ -4,7 +4,6 @@ class Solution:
         i = 0
         j = len(numbers)-1
         while i < j:
-            print(i,j)
             if numbers[i] + numbers[j] == target:
                 result.append(i+1)
                 result.append(j+1)
