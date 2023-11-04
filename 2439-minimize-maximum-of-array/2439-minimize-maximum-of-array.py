@@ -1,6 +1,6 @@
 class Solution:
     def minimizeArrayValue(self, nums: List[int]) -> int:
-        psum = nums
+        psum = [num for num in nums]
         
         for k in range(1, len(psum)):
             psum[k] = nums[k] + psum[k-1]
