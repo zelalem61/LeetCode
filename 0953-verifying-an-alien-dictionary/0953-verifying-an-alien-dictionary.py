@@ -1,24 +1,20 @@
-class Solution:
-    def isAlienSorted(self, words: List[str], order: str) -> bool:
-        
-        n = 0
-        for word in words:
-            if len(word) > n:
-                n = len(word)
-        
-        l = 0
-        while l < n:
-            arr = []
-            for m in words:
-                if l >= len(m):
-                    arr.append(-1)
-                elif l < len(m):
-                    arr.append(order.index(m[l]))
-            # print(arr)
-            if arr != sorted(arr):
-                print(arr)
+class Solution(object):
+    def isAlienSorted(self, words, order):
+        """
+        :type words: List[str]
+        :type order: str
+        :rtype: bool
+        """
+        dic = {}
+        new_words = []
+        for i, ch in enumerate(order):
+            dic[ch] = i
+        for w in words:
+            new = []
+            for c in w:
+                new.append(dic[c])
+            new_words.append(new)
+        for w1, w2 in zip(new_words, new_words[1:]):
+            if w1 > w2:
                 return False
-            elif len(arr) == len(set(arr)):
-                return True
-            l += 1
         return True
