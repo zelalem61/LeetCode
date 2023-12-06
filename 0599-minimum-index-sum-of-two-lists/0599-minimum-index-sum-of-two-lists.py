@@ -7,7 +7,6 @@ class Solution:
             if list1[i] in list2:
                 b = list2.index(list1[i])
                 dic[list1[i]] = i + b
-        my_dict = {'a': 1, 'b': 2, 'c': 3}
         
         for key, value in dic.items():
             ind.append(value)
