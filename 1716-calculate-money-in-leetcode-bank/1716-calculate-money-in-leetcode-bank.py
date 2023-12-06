@@ -1,17 +1,11 @@
 class Solution:
     def totalMoney(self, n: int) -> int:
-        a = n//7
-        fir = a+1
-        rem = n % 7
-        ans = 0
-        summ = 28
-        for i in range(a):
-            ans = ans + summ + i*7
-        for j in range(rem):
-            ans += fir
-            fir += 1
-        return ans
-
+        num_weeks = n//7
+        rem = n%7
+        sumOfRem = ((rem/2)*(2*(num_weeks+1) + (rem-1)))
+        res = 28*(num_weeks) + (num_weeks/2*(num_weeks - 1)*7) + sumOfRem
+        return int(res)
+            
 
 
 
