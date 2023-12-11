@@ -7,4 +7,4 @@ class Solution:
                 s.remove(fronts[i])
         if len(s) == 0:
             return 0
-        return min(s)
+        return s.pop()
