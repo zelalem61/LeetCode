@@ -13,7 +13,6 @@ class AuthenticationManager:
         if tokenId not in self.tokens:
             return 
         elif self.tokens[tokenId] > currentTime:
-            del self.tokens[tokenId]
             self.tokens[tokenId] = currentTime + self.timeToLive
         
     def countUnexpiredTokens(self, currentTime: int) -> int:
